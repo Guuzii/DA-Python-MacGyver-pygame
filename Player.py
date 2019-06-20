@@ -1,14 +1,18 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- # -tc- inutile!
 
-import Cell
+"""-tc- Ajouter une docstring"""
+
+import Cell # -tc- importer pygame avant et éviter les maj
 import EndView
 
 import pygame
 
 
 class Player:
+    """-tc- Ajouter une docstring"""
 
     def __init__(self, map):
+        """-tc- Ajouter une docstring"""
         self.position = map.entrance.position
         self.items = []
         self.map = map

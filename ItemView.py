@@ -1,4 +1,8 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- -tc- inutile!
+
+"""-tc ajouter docstring"""
+
+# -tc- import pygame ici
 
 import Item
 import MapView
@@ -8,11 +12,13 @@ import pygame
 
 
 class ItemView:
+    """-tc- ajouter docstring ici"""
 
     def __init__(self, item: Item.Item, pygame_object: MyPygame.Pygame, map_view: MapView.MapView):
+        """-tc- ajouter docstring ici"""
         path_img = map_view.path_img_32x32
 
-        if item.isPicked:
+        if item.isPicked: # -tc- pas conforme au PEP8
             self.item_render = path_img
         else:
             if item.name == "seringue":

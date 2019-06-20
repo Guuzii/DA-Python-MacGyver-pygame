@@ -1,14 +1,18 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- -tc- inutile!
+
+"""-tc- Ajouter une docstring"""
 
 import MyPygame
 import pygame
 
 
 class Menu:
+    """-tc- Ajouter une docstring"""
 
     def __init__(self, pygame_object: MyPygame.Pygame):
+        """-tc- Ajouter une docstring"""
         self.menu_render = pygame.Surface(
-            pygame_object.screen.get_size()).convert()
+            pygame_object.screen.get_size()).convert() # -tc- problème d'indentation
         self.menu_render.fill((15, 15, 15))
 
         self.font = pygame.font.Font(None, 28)

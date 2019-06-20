@@ -1,6 +1,10 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- -tc- inutile!
 
-import Position
+"""-tc- Ajouter une docstring"""
+
+# -tc- importer pygame ici
+
+import Position # -tc- éviter les majuscules dans les noms de modules
 import Cell
 import Map
 
@@ -8,8 +12,10 @@ import pygame
 
 
 class MapView():
+    """-tc- Ajouter une docstring"""
 
     def __init__(self, map: Map.Map):
+        """-tc- Ajouter une docstring"""
         sprites_sheet = map.pygame_object.load_image("floor-tiles-20x20.png")
 
         self.map_render = pygame.Surface(
@@ -31,11 +37,13 @@ class MapView():
         x = 0
         y = 0
 
-        while y < 15:
+        # -tc- utiliser une boucle for serait plus pythonique
+        while y < 15: # -tc- attention aux nombres magiques comme 15, 14!!!
 
             if x > 14:
                 x = 0
 
+            # -tc- utiliser une boucle for serait plus pythonique
             while x < 15:
 
                 position = Position.Position(x, y)
@@ -44,6 +52,7 @@ class MapView():
                 if test_cell in map.cells:
                     if test_cell == map.exit:
                         self.map_render.blit(
+                            # -tc- attention aux nombre magiques comme 32!
                             self.guardian_img_30x30, (x * 32, y * 32))
                     else:
                         self.map_render.blit(
@@ -51,6 +60,6 @@ class MapView():
                 else:
                     self.map_render.blit(self.wall_img_32x32, (x * 32, y * 32))
 
-                x += 1
+                x += 1 # -tc- peut être évité avec une boucle for
 
-            y += 1
+            y += 1 # -tc- peut être évité avec une boucle for

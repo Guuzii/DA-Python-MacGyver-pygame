@@ -1,15 +1,19 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- -tc- inutile!
+
+"""-tc- Ajouter une docstring"""
 
 import os
 import sys
-import pygame
+import pygame # -tc- ajouter un espace avec d'importer pygame
 
 
-class Pygame:
+class Pygame: 
+    """-tc- Ajouter une docstring"""
 
     def __init__(self, screen_dimension: tuple = (640, 480)):
+        """-tc- Ajouter une docstring"""
         pygame.init()
-        pygame.time.Clock().tick(30)
+        pygame.time.Clock().tick(30) # -tc- ne sert à rien hors de la boucle de jeu
         self.screen = pygame.display.set_mode(screen_dimension)
         pygame.display.set_caption("MacGyver Escapes")
 

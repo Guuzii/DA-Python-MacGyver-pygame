@@ -1,12 +1,16 @@
 # -*- coding: utf-8 -*-
 
+"""-tc- docstring"""
+
 import MyPygame
-import pygame
+import pygame # -tc- attention à l'ordre des imports
 
 
 class EndView:
+    """-tc- docstring"""
 
     def __init__(self, pygame_object: MyPygame.Pygame, victory: bool):
+        """-tc- docstring"""
         self.end_render = pygame.Surface(
             pygame_object.screen.get_size()).convert()
         self.end_render.fill((15, 15, 15))

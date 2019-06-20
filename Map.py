@@ -1,6 +1,10 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- -tc- inutile!
 
-import MyPygame
+"""-tc- Ajouter une docstring"""
+
+# -tc- importer random ici
+
+import MyPygame # -tc- attention aux majuscules!
 import Position
 import Cell
 import Item
@@ -9,8 +13,10 @@ import random
 
 
 class Map:
+    """-tc- Ajouter une docstring"""
 
     def __init__(self, pygame_object: MyPygame.Pygame = None):
+        """-tc- Ajouter une docstring"""
         self.pygame_object = pygame_object
         self.cells = []
         self.items = []

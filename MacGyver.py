@@ -1,6 +1,8 @@
-# -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*- -tc- inutile!
 
-import Menu
+# -tc- import pygame ici
+
+import Menu # -tc- éviter les majuscules dans les modules!
 import EndView
 import Map
 import MapView
@@ -21,7 +23,10 @@ if not pygame.mixer:
 # -----------------------------------------------------------------------------------------------------------------------------
 # PYGAME VERSION
 
+# -tc- une longue fonction comme celle-là peut être découpée en plusieurs
+# -tc- utiliser une classe avec plusieurs méthodes peut être intéressant
 def game_loop(pygame_object):
+    """-tc- ajouter une docstring"""
 
     run_loop = True
     my_pygame = pygame_object
@@ -87,6 +92,7 @@ def game_loop(pygame_object):
 
 
 def main():
+    """-tc- ajouter docstring"""
 
     run_main_loop = True
     my_pygame = MyPygame.Pygame((480, 480))

@@ -1,25 +1,45 @@
-# -*- coding: utf-8 -*-
+"""
+    MyPygame Object module
+"""
 
 import os
 import sys
+
 import pygame
 
 
 class Pygame:
+    """
+        Pygame Object
+
+        Initialize an pygame instance
+
+        Parameters:
+          - screen_dimension (tuple): the dimension of the pygame window
+        
+        Attributes:
+          - screen (pygame.Screen): window chere the game will run
+    """
 
     def __init__(self, screen_dimension: tuple = (640, 480)):
         pygame.init()
         pygame.time.Clock().tick(30)
         self.screen = pygame.display.set_mode(screen_dimension)
-        pygame.display.set_caption("MacGyver Escapes")
+        pygame.display.set_caption("MacGyver's Journey")
+
 
     def load_image(self, name, colorkey=None):
         '''
-            Load the image with from the local ressources/images directory and return a new surface from it.
-            Arguments :
-                - name = the name of the image file to load
-                - colorkey = the color to set transparent. RGB format or -1 for top left corner color
+            Load an image from the local ressources/images directory and return a new surface from it
+
+            Parameters:
+              - name (str): the name of the image file to load with its extension (.png, .jpg)
+              - colorkey (int/tuple): the color to set transparent. RGB format or -1 for top left corner color
+
+            Returns:
+              - image (pygame.Surface): a surface representing the image
         '''
+
         fullpath = os.path.join('ressources/images', name)
 
         try:
@@ -42,20 +62,22 @@ class Pygame:
 
         return image
 
-    def get_image_at(self, sheet: str, rectangle: pygame.Rect, colorkey=None):
+
+    def get_image_at(self, img_sheet: pygame.Surface, rectangle: pygame.Rect, colorkey=None):
         '''
             Get a portion of an image and return a new surface with it.
 
-            Arguments :
-                - sheet = the image to crop
-                - rectangle = the postion and the dimension on the crop to do
-                - colorkey = the color to set transparent. RGB format or -1 for top left corner color
+            Parameters :
+                - img_sheet (pygame.Surface): the image surface to crop
+                - rectangle (pygame.Rect): the postion and the dimension of the crop to do
+                - colorkey (int/tuple): the color to set transparent. RGB format or -1 for top left corner color
         '''
-        # Loads image from x,y,x+offset,y+offset (rectangle argument)
+
+        # Get image from x,y,x+offset,y+offset (rectangle argument)
         rect = pygame.Rect(rectangle)
         image = pygame.Surface(rect.size)
 
-        image.blit(sheet, (0, 0), rect)
+        image.blit(img_sheet, (0, 0), rect)
 
         # Set transparancy of the color in argument
         if colorkey is not None:

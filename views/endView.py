@@ -1,12 +1,27 @@
-# -*- coding: utf-8 -*-
+"""
+    EndView pygame.Surface module
+"""
 
-import MyPygame
 import pygame
+
+from component import myPygame
 
 
 class EndView:
+    """
+        EndView pygame.Surface
 
-    def __init__(self, pygame_object: MyPygame.Pygame, victory: bool):
+        Initialize a surface representing the view at the end of the game
+
+        Parameters:
+          - pygame_object (myPygame.Pygame): the object representing the pygame instance
+          - victory (bool): a boolean representing the player's victory or defeat
+
+        Attributes:
+          - end_render (pygame.Surface): the render of the EndView surface
+    """
+
+    def __init__(self, pygame_object: myPygame.Pygame, victory: bool):
         self.end_render = pygame.Surface(
             pygame_object.screen.get_size()).convert()
         self.end_render.fill((15, 15, 15))

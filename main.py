@@ -13,7 +13,7 @@
         # Left : MacGyver is trying to move left
         # Right : MacGyver is trying to move right
       
-      - Escape : exit the game and return to menu OR close the application
+      - Escape : exit the game and return to menu OR close the application if you already are in menu
 
     Have fun !
 """
@@ -21,7 +21,12 @@
 import pygame
 
 from component import labyrinth, player, myPygame
-from views import endView, menu, labyrinthView, playerView, itemView, interface
+from views import endView
+from views import menu
+from views import labyrinthView
+from views import playerView
+from views import itemView
+from views import interface
 
 if not pygame.font:
     print('Warning, fonts disabled')
@@ -35,7 +40,7 @@ if not pygame.mixer:
 
 def game_loop(pygame_object):
 
-    # Initialisation of the different components of the game
+    # Init of the different components of the game
     run_loop = True
     my_pygame = pygame_object
     game = labyrinth.Labyrinth(my_pygame)
@@ -121,7 +126,7 @@ def main():
         # Rendering the menu on the screen
         my_pygame.screen.blit(game_menu.menu_render, (0, 0))
 
-        # Listening for events on the pygame instance and reacting on some of them
+        # Listening for events on the pygame instance and reacting to some of them
         for event in pygame.event.get():
             
             if (event.type == pygame.KEYDOWN and event.key == pygame.K_ESCAPE) or event.type == pygame.QUIT:

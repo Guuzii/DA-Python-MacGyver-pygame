@@ -69,7 +69,7 @@ class Pygame:
 
             Parameters :
                 - img_sheet (pygame.Surface): the image surface to crop
-                - rectangle (pygame.Rect): the postion and the dimension of the crop to do
+                - rectangle (pygame.Rect): the position and the dimension of the crop to do
                 - colorkey (int/tuple): the color to set transparent. RGB format or -1 for top left corner color
         '''
 

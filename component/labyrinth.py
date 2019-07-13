@@ -98,11 +98,10 @@ class Labyrinth:
 
     def get_random_pos(self):
         '''
-            Pick elements of cells[] list depending on the number of items available and return a list of there positions.
+           Randomly pick n elements of cells[] list where n is the number of items available, then return a list of there positions.
         '''
         items_number = len(self.items)
-        cells = random.sample(
-            set(self.cells) - {self.entrance, self.exit}, items_number)
+        cells = random.sample(set(self.cells) - {self.entrance, self.exit}, items_number)
         positions = [cell.position for cell in cells]
 
         return positions

@@ -18,6 +18,3 @@ Made in Python and using Pygame module.
   - Arrows to move the character
   - Escape while ingame to return to menu. If in menu press Escape to quit the program
   - Space to start a new game while in menu.
-
-Link to project's page on OpenClassrooms.com : https://openclassrooms.com/fr/projects/aidez-macgyver-a-sechapper
-
